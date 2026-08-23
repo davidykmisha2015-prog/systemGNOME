@@ -1,24 +1,10 @@
-@property --ascii-titles {
-    syntax: 'off | on';
-    inherits: false;
-    initial-value: on;
-}
-
-@container body style(--ascii-titles: on) {
-    h3[data-text-variant='heading-xxl/extrabold'] {
-        font-family: 'asciid', 'DM Mono', 'gg mono', 'Source Code Pro', Consolas, Monaco, monospace;
-        font-size: 50px;
-        font-weight: 400;
-    }
-}
-
 @property --ascii-loader {
-    syntax: 'off | system24 | cats';
+    syntax: 'off | system26 | cats';
     inherits: false;
-    initial-value: system24;
+    initial-value: system26;
 }
 
-@container body style(--ascii-loader: system24) {
+@container body style(--ascii-loader: system26) {
     .content_a2f514 {
         display: flex;
         flex-direction: column;
@@ -30,12 +16,13 @@
     }
     .content_a2f514::before {
         display: block;
-        content: '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     ';
-        font-size: 18px;
+        content: '   _____           __                  ________  _   __ ____  __  _________ \A  / ___/__  ______/ /____ _____  ____   / ____/ /  / | / / __ \\/  |/  / ____/\A  \\__ \\/ / / / ___/ __/ _ \\/ __ \\/ __ \\ / /_  / /   /  |/ / / / / /|_/ / __/   \A ___/ / /_/ (__  ) /_/  __/ / / / /_/ // __/ / /___/ /|  / /_/ / /  / / /___   \A/____/\\__, /____/\\__/\\___/_/ /_/\\____//_/   /_____/_/ |_/\\____/_/  /_/_____/   \A     /____/                                                                  ';
+        font-size: 16px;
         font-family: monospace;
         white-space: pre;
         line-height: 1.2;
-        background: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+        /* Синій GTK4 градієнт */
+        background: linear-gradient(to right, #3584e4 0%, #62a0ea 25%, #99c1f1 75%, #3584e4 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
