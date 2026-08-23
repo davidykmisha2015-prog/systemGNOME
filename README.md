@@ -1,5 +1,5 @@
 
-<img src="https://github.com/refact0r/system24/raw/main/assets/preview.png">
+<img src="https://github.com/refact0r/systemGNOME/raw/main/assets/preview.png">
 
 # system24
 
