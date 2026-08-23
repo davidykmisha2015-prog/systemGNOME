@@ -5,7 +5,7 @@
 
 a customizable, tui-style discord theme. inspired by [spicetify text theme](https://github.com/spicetify/spicetify-themes/tree/master/text).
 
-<img src="https://github.com/refact0r/system24/raw/main/assets/">
+<img src="https://github.com/refact0r/system24/raw/main/assets/screenshot.png">
 
 ## discord server
 
