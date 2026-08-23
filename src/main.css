@@ -18,8 +18,8 @@ body {
 
     --gap: 12px;
     --divider-thickness: 4px;
-    --border-thickness: 1px;
-    --border-hover-transition: 0.15s ease;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
 
     --animations: on;
     --list-item-transition: 0.2s ease;
@@ -41,7 +41,7 @@ body {
     --custom-dms-background: off;
     --dms-background-image-url: url('');
     --dms-background-image-size: cover;
-    --dms-background-color: linear-gradient(70deg, #3584e4, #62a0ea, #99c1f1);
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
 
     --background-image: off;
     --background-image-url: url('');
@@ -54,6 +54,7 @@ body {
 
     --small-user-panel: on;
 
+    /* Повністю квадратні елементи (без заокруглень) */
     --unrounding: on;
     --round-pfp: off;
     --remove-pfp-decor: off;
@@ -67,7 +68,7 @@ body {
     --label-font-weight: 500;
 }
 
-/* GNOME GTK4 Adwaita Dark Colors */
+/* Оригінальна палітра system24 (Midnight colors) з квадратними кнопками */
 :root {
     --colors: on;
 
@@ -78,41 +79,73 @@ body {
     --text-4: oklch(60% 0 0);
     --text-5: oklch(40% 0 0);
 
-    /* GNOME GTK4 Фон */
-    --bg-1: #38383c; /* Активні елементи */
-    --bg-2: #2e2e32; /* Кнопки */
-    --bg-3: #242428; /* Сайдбар / панелі */
-    --bg-4: #1e1e22; /* Головний фон */
+    /* Рідні фони system24 */
+    --bg-1: oklch(31% 0 0);
+    --bg-2: oklch(27% 0 0);
+    --bg-3: oklch(23% 0 0);
+    --bg-4: oklch(19% 0 0);
     
-    --hover: rgba(53, 132, 228, 0.1);
-    --active: rgba(53, 132, 228, 0.2);
-    --active-2: rgba(53, 132, 228, 0.3);
+    --hover: oklch(54% 0 0 / 0.1);
+    --active: oklch(54% 0 0 / 0.2);
+    --active-2: oklch(54% 0 0 / 0.3);
     --message-hover: var(--hover);
 
-    /* GTK-акценти */
-    --accent-1: #62a0ea;
-    --accent-2: #3584e4;
-    --accent-3: #1c71d8;
-    --accent-4: #185fb4;
-    --accent-5: #15539e;
-    --accent-new: #e01b24;
-    --mention: linear-gradient(to right, rgba(53, 132, 228, 0.1) 40%, transparent);
-    --mention-hover: linear-gradient(to right, rgba(53, 132, 228, 0.15) 40%, transparent);
-    --reply: linear-gradient(to right, rgba(255, 255, 255, 0.05) 40%, transparent);
-    --reply-hover: linear-gradient(to right, rgba(255, 255, 255, 0.08) 40%, transparent);
+    /* Рідні фіолетові акценти system24 */
+    --accent-1: var(--purple-1);
+    --accent-2: var(--purple-2);
+    --accent-3: var(--purple-3);
+    --accent-4: var(--purple-4);
+    --accent-5: var(--purple-5);
+    --accent-new: var(--red-2);
+    
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-    /* GTK Статуси */
-    --online: #26a269;
-    --dnd: #e01b24;
-    --idle: #f6d32d;
-    --streaming: #9141ac;
-    --offline: #9a9996;
+    /* Стандарти статусів */
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--purple-2);
+    --offline: var(--text-4);
 
     /* Бордюри */
     --border-light: var(--hover);
-    --border: #38383c;
-    --border-hover: #3584e4;
-    --button-border: rgba(255, 255, 255, 0.1);
+    --border: var(--active);
+    --border-hover: var(--accent-2);
+    --button-border: hsl(220, 0%, 100%, 0.1);
+
+    /* Базові відтінки */
+    --red-1: oklch(75% 0.13 0);
+    --red-2: oklch(70% 0.13 0);
+    --red-3: oklch(65% 0.13 0);
+    --red-4: oklch(60% 0.13 0);
+    --red-5: oklch(55% 0.13 0);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
+
+    --yellow-1: oklch(80% 0.12 90);
+    --yellow-2: oklch(75% 0.12 90);
+    --yellow-3: oklch(70% 0.12 90);
+    --yellow-4: oklch(65% 0.12 90);
+    --yellow-5: oklch(60% 0.12 90);
+
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
 }
 
 body {
@@ -130,7 +163,7 @@ body {
     padding: 8px;
 }
 
-/* Кастомний ASCII-лоадер SystemGNOME */
+/* ASCII-лоадер (SystemGNOME у стилі system24) */
 @property --ascii-loader {
     syntax: 'off | system26 | cats';
     inherits: false;
@@ -154,7 +187,7 @@ body {
         font-family: monospace;
         white-space: pre;
         line-height: 1.2;
-        background: linear-gradient(to right, #3584e4 0%, #62a0ea 25%, #99c1f1 75%, #3584e4 100%);
+        background: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
