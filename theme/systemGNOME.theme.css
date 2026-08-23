@@ -1,5 +1,5 @@
 /**
- * @name system26
+ * @name systemGNOME
  * @author Based on system24 by refact0r
  * @version 1.5.0
  * @description A GNOME-inspired dark theme with blue accents, Adwaita Sans font, ASCII loader, and fully unrounded elements.
@@ -18,34 +18,34 @@
 }
 
 body {
-    /* Офіційний шрифт GNOME Adwaita (Inter) */
+    /* Official GNOME Adwaita font (Inter) */
     --font: 'Inter', sans-serif;
     --code-font: 'Inter', monospace;
     font-weight: 400;
     letter-spacing: -0.01em;
 
-    /* sizes */
-    --gap: 12px; /* spacing between panels */
-    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
-    --border-thickness: 2px; /* thickness of borders around main panels */
-    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+    /* Layout sizes */
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
 
-    /* animation/transition options */
-    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
-    --list-item-transition: 0.2s ease; /* transition for list items */
-    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+    /* Animation and transition options */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
 
-    /* top bar options */
-    --top-bar-height: var(--gap); /* height of the top bar */
-    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar */
-    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title */
-    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color */
+    /* Top bar options */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
 
-    /* window controls */
-    --custom-window-controls: off; /* off: default window controls, on: custom window controls */
-    --window-control-size: 14px; /* size of custom window controls */
+    /* Window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
 
-    /* dms button options (дефолтна іконка та вимкнені кастомні фони) */
+    /* DMS button options (default icon & clean backgrounds) */
     --custom-dms-icon: off;
     --dms-icon-svg-url: url('');
     --dms-icon-svg-size: 90%;
@@ -56,84 +56,86 @@ body {
     --dms-background-image-size: cover;
     --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--blue-3), var(--blue-1));
 
-    /* background image options */
-    --background-image: off; /* off: no background image, on: enable background image */
-    --background-image-url: url(''); /* url of the background image */
+    /* Background image options */
+    --background-image: off;
+    --background-image-url: url('');
 
-    /* transparency/blur options */
-    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
-    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer */
-    --panel-blur: off; /* off: no changes, on: blur the background of panels */
-    --blur-amount: 12px; /* amount of blur */
-    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent */
+    /* Transparency and blur options */
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
 
-    /* other options */
-    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+    /* User panel customization */
+    --small-user-panel: on;
 
-    /* unrounding options (повністю квадратні елементи) */
-    --unrounding: on; /* off: default, on: remove rounded corners from panels */
-    --round-pfp: off; /* off: square profile pictures, on: rounded profile pictures */
-    --remove-pfp-decor: off; /* off: default, on: remove profile picture decorations */
+    /* Unrounding options (fully unrounded brutalist UI) */
+    --unrounding: on;
+    --round-pfp: off;
+    --remove-pfp-decor: off;
 
-    /* styling options */
-    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
-    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
-    --ascii-loader: system26; /* наш власний system26 лоадер замість дефолтного system24 */
+    /* Custom styling options */
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: systemGNOME;
 
-    /* panel labels */
-    --panel-labels: on; /* off: default, on: add labels to panels */
-    --label-color: var(--text-muted); /* color of labels */
-    --label-font-weight: 500; /* font weight of labels */
+    /* Panel labels */
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
 }
 
-/* color options (синя палітра замість фіолетової) */
+/* Color theme palette (GNOME blue accents) */
 :root {
-    --colors: on; /* off: discord default colors, on: midnight custom colors */
+    --colors: on;
 
-    /* text colors */
-    --text-0: var(--bg-4); /* text on colored elements */
-    --text-1: oklch(95% 0 0); /* other normally white text */
-    --text-2: oklch(85% 0 0); /* headings and important text */
-    --text-3: oklch(75% 0 0); /* normal text */
-    --text-4: oklch(60% 0 0); /* icon buttons and channels */
-    --text-5: oklch(40% 0 0); /* muted channels/chats and timestamps */
+    /* Text colors */
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0 0);
+    --text-2: oklch(85% 0 0);
+    --text-3: oklch(75% 0 0);
+    --text-4: oklch(60% 0 0);
+    --text-5: oklch(40% 0 0);
 
-    /* background and dark colors */
-    --bg-1: oklch(31% 0 0); /* dark buttons when clicked */
-    --bg-2: oklch(27% 0 0); /* dark buttons */
-    --bg-3: oklch(23% 0 0); /* spacing, secondary elements */
-    --bg-4: oklch(19% 0 0); /* main background color */
-    --hover: oklch(60% 0.15 230 / 0.1); /* channels and buttons when hovered */
-    --active: oklch(60% 0.15 230 / 0.2); /* channels and buttons when clicked or selected */
-    --active-2: oklch(60% 0.15 230 / 0.3); /* extra state for transparent buttons */
-    --message-hover: var(--hover); /* messages when hovered */
+    /* Background and dark shades */
+    --bg-1: oklch(31% 0 0);
+    --bg-2: oklch(27% 0 0);
+    --bg-3: oklch(23% 0 0);
+    --bg-4: oklch(19% 0 0);
+    
+    --hover: oklch(60% 0.15 230 / 0.1);
+    --active: oklch(60% 0.15 230 / 0.2);
+    --active-2: oklch(60% 0.15 230 / 0.3);
+    --message-hover: var(--hover);
 
-    /* accent colors (сині акценти) */
-    --accent-1: var(--blue-1); /* links and other accent text */
-    --accent-2: var(--blue-2); /* small accent elements */
-    --accent-3: var(--blue-3); /* accent buttons */
-    --accent-4: var(--blue-4); /* accent buttons when hovered */
-    --accent-5: var(--blue-5); /* accent buttons when clicked */
-    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
-    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
-    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
-    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
-    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+    /* Accent colors (Blue theme) */
+    --accent-1: var(--blue-1);
+    --accent-2: var(--blue-2);
+    --accent-3: var(--blue-3);
+    --accent-4: var(--blue-4);
+    --accent-5: var(--blue-5);
+    --accent-new: var(--red-2);
+    
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-    /* status indicator colors */
+    /* Status indicator colors */
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
     --streaming: var(--blue-2);
     --offline: var(--text-4);
 
-    /* border colors */
-    --border-light: var(--hover); /* general light border color */
-    --border: var(--active); /* general normal border color */
-    --border-hover: var(--accent-2); /* border color of panels when hovered */
-    --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+    /* Border colors */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--accent-2);
+    --button-border: hsl(220, 0%, 100%, 0.1);
 
-    /* base colors */
+    /* Base color definitions */
     --red-1: oklch(75% 0.13 0);
     --red-2: oklch(70% 0.13 0);
     --red-3: oklch(65% 0.13 0);
@@ -166,8 +168,8 @@ body {
 }
 
 body {
-    --custom-chatbar: separated !important; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
-    --chatbar-height: 56px !important; /* height of the chatbar */
+    --custom-chatbar: separated !important;
+    --chatbar-height: 56px !important;
 }
 
 .bg__960e4 {
@@ -180,14 +182,14 @@ body {
     padding: 8px;
 }
 
-/* --- БЛОК ЛОАДЕРА (SystemGNOME з твоїм артом) --- */
+/* --- ASCII LOADER BLOCK (systemGNOME custom art) --- */
 @property --ascii-loader {
-    syntax: 'off | system26 | cats';
+    syntax: 'off | systemGNOME | cats';
     inherits: false;
-    initial-value: system26;
+    initial-value: systemGNOME;
 }
 
-@container body style(--ascii-loader: system26) {
+@container body style(--ascii-loader: systemGNOME) {
     .content_a2f514 {
         display: flex;
         flex-direction: column;
@@ -231,20 +233,6 @@ body {
     }
 }
 
-/* --- ПОВНЕ ВИПРАВЛЕННЯ ДЛЯ КВАДРАТНИХ ЕЛЕМЕНТІВ --- */
-*, ::before, ::after {
-    border-radius: 0 !important;
-}
-
-/* На випадок, якщо аватарки теж мають бути квадратними */
-.avatar_f9623d, 
-.wrapper__3afbf, 
-.mask_icon__466b0,
-.avatar__63ed3,
-img.avatar__08ab4 {
-    border-radius: 0 !important;
-}
-
 @container body style(--ascii-loader: cats) {
     .content_a2f514 {
         display: flex;
@@ -263,4 +251,17 @@ img.avatar__08ab4 {
     .text_a2f514 {
         position: static;
     }
+}
+
+/* --- HARD UNROUNDING OVERRIDE (Guarantees square elements everywhere) --- */
+*, ::before, ::after {
+    border-radius: 0 !important;
+}
+
+.avatar_f9623d, 
+.wrapper__3afbf, 
+.mask_icon__466b0,
+.avatar__63ed3,
+img.avatar__08ab4 {
+    border-radius: 0 !important;
 }
