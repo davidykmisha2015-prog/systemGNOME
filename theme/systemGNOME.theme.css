@@ -1,0 +1,266 @@
+/**
+ * @name system26
+ * @author Based on system24 by refact0r
+ * @version 1.5.0
+ * @description A GNOME-inspired dark theme with blue accents, Adwaita Sans font, ASCII loader, and fully unrounded elements.
+ */
+
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local('asciid'),
+        url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
+}
+
+body {
+    /* Офіційний шрифт GNOME Adwaita (Inter) */
+    --font: 'Inter', sans-serif;
+    --code-font: 'Inter', monospace;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2px; /* thickness of borders around main panels */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color */
+
+    /* window controls */
+    --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options (дефолтна іконка та вимкнені кастомні фони) */
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--blue-3), var(--blue-1));
+
+    /* background image options */
+    --background-image: off; /* off: no background image, on: enable background image */
+    --background-image-url: url(''); /* url of the background image */
+
+    /* transparency/blur options */
+    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer */
+    --panel-blur: off; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+    /* unrounding options (повністю квадратні елементи) */
+    --unrounding: on; /* off: default, on: remove rounded corners from panels */
+    --round-pfp: off; /* off: square profile pictures, on: rounded profile pictures */
+    --remove-pfp-decor: off; /* off: default, on: remove profile picture decorations */
+
+    /* styling options */
+    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+    --ascii-loader: system26; /* наш власний system26 лоадер замість дефолтного system24 */
+
+    /* panel labels */
+    --panel-labels: on; /* off: default, on: add labels to panels */
+    --label-color: var(--text-muted); /* color of labels */
+    --label-font-weight: 500; /* font weight of labels */
+}
+
+/* color options (синя палітра замість фіолетової) */
+:root {
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+    /* text colors */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: oklch(95% 0 0); /* other normally white text */
+    --text-2: oklch(85% 0 0); /* headings and important text */
+    --text-3: oklch(75% 0 0); /* normal text */
+    --text-4: oklch(60% 0 0); /* icon buttons and channels */
+    --text-5: oklch(40% 0 0); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: oklch(31% 0 0); /* dark buttons when clicked */
+    --bg-2: oklch(27% 0 0); /* dark buttons */
+    --bg-3: oklch(23% 0 0); /* spacing, secondary elements */
+    --bg-4: oklch(19% 0 0); /* main background color */
+    --hover: oklch(60% 0.15 230 / 0.1); /* channels and buttons when hovered */
+    --active: oklch(60% 0.15 230 / 0.2); /* channels and buttons when clicked or selected */
+    --active-2: oklch(60% 0.15 230 / 0.3); /* extra state for transparent buttons */
+    --message-hover: var(--hover); /* messages when hovered */
+
+    /* accent colors (сині акценти) */
+    --accent-1: var(--blue-1); /* links and other accent text */
+    --accent-2: var(--blue-2); /* small accent elements */
+    --accent-3: var(--blue-3); /* accent buttons */
+    --accent-4: var(--blue-4); /* accent buttons when hovered */
+    --accent-5: var(--blue-5); /* accent buttons when clicked */
+    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* status indicator colors */
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--blue-2);
+    --offline: var(--text-4);
+
+    /* border colors */
+    --border-light: var(--hover); /* general light border color */
+    --border: var(--active); /* general normal border color */
+    --border-hover: var(--accent-2); /* border color of panels when hovered */
+    --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+    /* base colors */
+    --red-1: oklch(75% 0.13 0);
+    --red-2: oklch(70% 0.13 0);
+    --red-3: oklch(65% 0.13 0);
+    --red-4: oklch(60% 0.13 0);
+    --red-5: oklch(55% 0.13 0);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.15 240);
+    --blue-2: oklch(70% 0.15 240);
+    --blue-3: oklch(65% 0.15 240);
+    --blue-4: oklch(60% 0.15 240);
+    --blue-5: oklch(55% 0.15 240);
+
+    --yellow-1: oklch(80% 0.12 90);
+    --yellow-2: oklch(75% 0.12 90);
+    --yellow-3: oklch(70% 0.12 90);
+    --yellow-4: oklch(65% 0.12 90);
+    --yellow-5: oklch(60% 0.12 90);
+
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
+}
+
+body {
+    --custom-chatbar: separated !important; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+    --chatbar-height: 56px !important; /* height of the chatbar */
+}
+
+.bg__960e4 {
+    background: var(--background-base-low);
+}
+.container__01ae2 {
+    background-color: var(--background-base-low);
+}
+.container__37e49 {
+    padding: 8px;
+}
+
+/* --- БЛОК ЛОАДЕРА (SystemGNOME з твоїм артом) --- */
+@property --ascii-loader {
+    syntax: 'off | system26 | cats';
+    inherits: false;
+    initial-value: system26;
+}
+
+@container body style(--ascii-loader: system26) {
+    .content_a2f514 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .content_a2f514 > .spinner_a2f514 {
+        display: none;
+    }
+    .content_a2f514::before {
+        display: block;
+        content: '          ______       __                 _______   ______  __  _________\A _______  _______/ /____  ____ ___  / ____/ | / / __ \\/  |/  / ____/\A/ ___/ / / / ___/ __/ _ \\/ __ `__ \\/ / __/  | |/ / / / / /|_/ / __/   \A(__  ) /_/ (__  ) /_/  __/ / / / / / /_/ / /|  / /_/ / /  / / /___   \A____/\\__, /____/\\__/\___/_/ /_/ /_/\____/_/ |_/\\____/_/  /_/_____/   \A     /____/                                                           ';
+        font-size: 15px;
+        font-family: monospace;
+        white-space: pre;
+        line-height: 1.2;
+        background: linear-gradient(to right, var(--blue-1) 0%, var(--blue-3) 50%, var(--blue-1) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: textShine 1.5s linear infinite reverse;
+    }
+    .text_a2f514 {
+        position: static;
+    }
+
+    @keyframes textShine {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        50.0001% {
+            background-position: -100%, 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+/* --- ПОВНЕ ВИПРАВЛЕННЯ ДЛЯ КВАДРАТНИХ ЕЛЕМЕНТІВ --- */
+*, ::before, ::after {
+    border-radius: 0 !important;
+}
+
+/* На випадок, якщо аватарки теж мають бути квадратними */
+.avatar_f9623d, 
+.wrapper__3afbf, 
+.mask_icon__466b0,
+.avatar__63ed3,
+img.avatar__08ab4 {
+    border-radius: 0 !important;
+}
+
+@container body style(--ascii-loader: cats) {
+    .content_a2f514 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: static;
+    }
+    .content_a2f514 > .spinner_a2f514 {
+        display: none;
+    }
+    .content_a2f514::before {
+        display: block;
+        content: url('https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/assets/cats.gif');
+    }
+    .text_a2f514 {
+        position: static;
+    }
+}
