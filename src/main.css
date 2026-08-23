@@ -1,5 +1,12 @@
+/**
+ * @name system26
+ * @author Based on system24 by refact0r
+ * @version 1.3.0
+ * @description A GNOME-inspired dark theme with blue accents, Adwaita Sans font, ASCII loader, and default Discord icon.
+ */
+
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @font-face {
     font-family: 'asciid';
@@ -11,10 +18,11 @@
 }
 
 body {
-    --font: 'DM Mono';
-    --code-font: 'DM Mono';
-    font-weight: 300;
-    letter-spacing: -0.05ch;
+    /* Офіційний шрифт GNOME Adwaita (Inter) */
+    --font: 'Inter', sans-serif;
+    --code-font: 'Inter', monospace;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 
     --gap: 12px;
     --divider-thickness: 4px;
@@ -33,15 +41,9 @@ body {
     --custom-window-controls: off;
     --window-control-size: 14px;
 
+    /* Повертаємо стандартні налаштування іконки (дефолтний логотип) */
     --custom-dms-icon: off;
-    --dms-icon-svg-url: url('');
-    --dms-icon-svg-size: 90%;
-    --dms-icon-color-before: var(--icon-subtle);
-    --dms-icon-color-after: var(--white);
     --custom-dms-background: off;
-    --dms-background-image-url: url('');
-    --dms-background-image-size: cover;
-    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--blue-3), var(--blue-1));
 
     --background-image: off;
     --background-image-url: url('');
@@ -54,7 +56,7 @@ body {
 
     --small-user-panel: on;
 
-    /* Квадратні елементи (без заокруглень) */
+    /* Повністю квадратні елементи (без заокруглень) */
     --unrounding: on;
     --round-pfp: off;
     --remove-pfp-decor: off;
@@ -68,7 +70,7 @@ body {
     --label-font-weight: 500;
 }
 
-/* Переводимо акценти на насичений синій колір, залишаючи темні фони */
+/* Сині акценти та темні фони */
 :root {
     --colors: on;
 
@@ -90,7 +92,7 @@ body {
     --active-2: oklch(60% 0.15 230 / 0.3);
     --message-hover: var(--hover);
 
-    /* Сині акценти замість фіолетових */
+    /* Сині акценти */
     --accent-1: var(--blue-1);
     --accent-2: var(--blue-2);
     --accent-3: var(--blue-3);
@@ -163,7 +165,7 @@ body {
     padding: 8px;
 }
 
-/* Виправлений ASCII-лоадер із правильним написом SystemGNOME та синім градієнтом */
+/* --- БЛОК ЛОАДЕРА (SystemGNOME з твоїм артом) --- */
 @property --ascii-loader {
     syntax: 'off | system26 | cats';
     inherits: false;
@@ -182,7 +184,7 @@ body {
     }
     .content_a2f514::before {
         display: block;
-        content: '   _____          __                 _______ _   __ ____  _  ________________\A  / ___/__  _____/ /_____ _____ ___  / ____/ | / / __ \\/ |/ / ____/ ____/\A  \\__ \\/ / / / ___/ __/ __ `__ \\/ / __/  | |/ / / / / /|_/ / __/ / /_   \A ___/ / /_/ (__  ) /_/ / / / / / / /_/ /   |   / /_/ / /  / / /___/ __/   \A/____/\\__, /____/\\__/_/ /_/ /_/\\____/    |_|/\\____/_/  /_/_____/_/      ';
+        content: '          ______       __                 _______   ______  __  _________\A _______  _______/ /____  ____ ___  / ____/ | / / __ \\/  |/  / ____/\A/ ___/ / / / ___/ __/ _ \\/ __ `__ \\/ / __/  | |/ / / / / /|_/ / __/   \A(__  ) /_/ (__  ) /_/  __/ / / / / / /_/ / /|  / /_/ / /  / / /___   \A____/\\__, /____/\\__/\___/_/ /_/ /_/\____/_/ |_/\\____/_/  /_/_____/   \A     /____/                                                           ';
         font-size: 15px;
         font-family: monospace;
         white-space: pre;
