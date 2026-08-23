@@ -41,7 +41,7 @@ body {
     --custom-dms-background: off;
     --dms-background-image-url: url('');
     --dms-background-image-size: cover;
-    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--blue-3), var(--blue-1));
 
     --background-image: off;
     --background-image-url: url('');
@@ -54,7 +54,7 @@ body {
 
     --small-user-panel: on;
 
-    /* Повністю квадратні елементи (без заокруглень) */
+    /* Квадратні елементи (без заокруглень) */
     --unrounding: on;
     --round-pfp: off;
     --remove-pfp-decor: off;
@@ -68,7 +68,7 @@ body {
     --label-font-weight: 500;
 }
 
-/* Оригінальна палітра system24 (Midnight colors) з квадратними кнопками */
+/* Переводимо акценти на насичений синій колір, залишаючи темні фони */
 :root {
     --colors: on;
 
@@ -79,23 +79,23 @@ body {
     --text-4: oklch(60% 0 0);
     --text-5: oklch(40% 0 0);
 
-    /* Рідні фони system24 */
+    /* Фони */
     --bg-1: oklch(31% 0 0);
     --bg-2: oklch(27% 0 0);
     --bg-3: oklch(23% 0 0);
     --bg-4: oklch(19% 0 0);
     
-    --hover: oklch(54% 0 0 / 0.1);
-    --active: oklch(54% 0 0 / 0.2);
-    --active-2: oklch(54% 0 0 / 0.3);
+    --hover: oklch(60% 0.15 230 / 0.1);
+    --active: oklch(60% 0.15 230 / 0.2);
+    --active-2: oklch(60% 0.15 230 / 0.3);
     --message-hover: var(--hover);
 
-    /* Рідні фіолетові акценти system24 */
-    --accent-1: var(--purple-1);
-    --accent-2: var(--purple-2);
-    --accent-3: var(--purple-3);
-    --accent-4: var(--purple-4);
-    --accent-5: var(--purple-5);
+    /* Сині акценти замість фіолетових */
+    --accent-1: var(--blue-1);
+    --accent-2: var(--blue-2);
+    --accent-3: var(--blue-3);
+    --accent-4: var(--blue-4);
+    --accent-5: var(--blue-5);
     --accent-new: var(--red-2);
     
     --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
@@ -107,7 +107,7 @@ body {
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
-    --streaming: var(--purple-2);
+    --streaming: var(--blue-2);
     --offline: var(--text-4);
 
     /* Бордюри */
@@ -129,11 +129,11 @@ body {
     --green-4: oklch(60% 0.12 170);
     --green-5: oklch(55% 0.12 160);
 
-    --blue-1: oklch(75% 0.11 215);
-    --blue-2: oklch(70% 0.11 215);
-    --blue-3: oklch(65% 0.11 215);
-    --blue-4: oklch(60% 0.11 215);
-    --blue-5: oklch(55% 0.11 215);
+    --blue-1: oklch(75% 0.15 240);
+    --blue-2: oklch(70% 0.15 240);
+    --blue-3: oklch(65% 0.15 240);
+    --blue-4: oklch(60% 0.15 240);
+    --blue-5: oklch(55% 0.15 240);
 
     --yellow-1: oklch(80% 0.12 90);
     --yellow-2: oklch(75% 0.12 90);
@@ -163,7 +163,7 @@ body {
     padding: 8px;
 }
 
-/* ASCII-лоадер (SystemGNOME у стилі system24) */
+/* Виправлений ASCII-лоадер із правильним написом SystemGNOME та синім градієнтом */
 @property --ascii-loader {
     syntax: 'off | system26 | cats';
     inherits: false;
@@ -182,12 +182,12 @@ body {
     }
     .content_a2f514::before {
         display: block;
-        content: '   _____           __                  ________  _   __ ____  __  _________ \A  / ___/__  ______/ /____ _____  ____   / ____/ /  / | / / __ \\/  |/  / ____/\A  \\__ \\/ / / / ___/ __/ _ \\/ __ \\/ __ \\ / /_  / /   /  |/ / / / / /|_/ / __/   \A ___/ / /_/ (__  ) /_/  __/ / / / /_/ // __/ / /___/ /|  / /_/ / /  / / /___   \A/____/\\__, /____/\\__/\\___/_/ /_/\\____//_/   /_____/_/ |_/\\____/_/  /_/_____/   \A     /____/                                                                  ';
-        font-size: 16px;
+        content: '   _____          __                 _______ _   __ ____  _  ________________\A  / ___/__  _____/ /_____ _____ ___  / ____/ | / / __ \\/ |/ / ____/ ____/\A  \\__ \\/ / / / ___/ __/ __ `__ \\/ / __/  | |/ / / / / /|_/ / __/ / /_   \A ___/ / /_/ (__  ) /_/ / / / / / / /_/ /   |   / /_/ / /  / / /___/ __/   \A/____/\\__, /____/\\__/_/ /_/ /_/\\____/    |_|/\\____/_/  /_/_____/_/      ';
+        font-size: 15px;
         font-family: monospace;
         white-space: pre;
         line-height: 1.2;
-        background: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+        background: linear-gradient(to right, var(--blue-1) 0%, var(--blue-3) 50%, var(--blue-1) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
