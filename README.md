@@ -24,7 +24,7 @@ add `https://davidykmisha2015-prog.github.io/systemGNOME/systemGNOME.css` to you
 
 ## flavors
 
-curently doesn't have any variant of this theme :(
+Arc-Dark - (https://github.com/davidykmisha2015-prog/systemGNOME/blob/main/systemGNOME-Arc-Dark.them.css)
 
 ## contributing
 
